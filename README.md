@@ -13,7 +13,31 @@ Next.js framework.
 Use as a command line tool to initialize an existing project as a native app.
 
 ```bash
-npm i @socketsupply/next-native -g
+$npm i @socketsupply/next-native -g
+```
+
+```
+$next-native -h
+next-natve v0.5.4 (97fa3f7c)
+
+usage:
+  next-natve [SUBCOMMAND] [options] [<project-dir>]
+  next-natve [SUBCOMMAND] -h
+
+subcommands:
+  build                                build project
+  list-devices                         get the list of connected devices
+  init                                 create a new project (in the current directory)
+  install-app                          install app to the device
+  print-build-dir                      print build path to stdout
+  run                                  run application
+  env                                  print relavent environment variables
+  setup                                install build dependencies
+
+general options:
+  -h, --help                           print help message
+  --prefix                             print install path
+  -v, --version                        print program version
 ```
 
 ## AS CODE
