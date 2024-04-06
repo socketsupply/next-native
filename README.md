@@ -3,8 +3,8 @@
 Next-Natve is a project that makes it possible to build native, cross-platform apps using the
 Next.js framework.
 
-> [!NOTE]
-> This is re-release software! It's only ready for early adopters and potential contributors.
+> [!WARNING]
+> This is pre-release software! It's only ready for early adopters and potential contributors.
 
 # Usage
 
