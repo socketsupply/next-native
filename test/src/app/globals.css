@@ -93,6 +93,27 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
+  font-family: helvetica;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  app-region: drag;
+  --app-region: drag;
+}
+
+h1 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+h1 b {
+  font-weight: 900;
 }
 
 a {
