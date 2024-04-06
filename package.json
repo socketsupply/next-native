@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "npm run lint && ssc build -r -o test/",
-    "lint": "standard"
+    "lint": "standard src"
   },
   "keywords": [
     "next",

@@ -8,6 +8,16 @@ Next.js framework.
 
 # USAGE
 
+During pre-release...
+
+```bash
+# from the socket repo
+npm run relink
+
+# from the repo you are working on
+npm link @socketsupply/socket
+```
+
 ## FROM CLI
 
 Use as a command line tool to initialize an existing project as a native app.
