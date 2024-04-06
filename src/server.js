@@ -142,7 +142,6 @@ export default class Server {
     const handle = this.#instance.getRequestHandler()
     return onRequest
     function onRequest (req, res) {
-      console.log(req.url)
       req.headers.host = '0.0.0.0'
       req.headers['x-forwarded-proto'] = 'http'
       req.headers['x-forwarded-host'] = 'localhost:3000'

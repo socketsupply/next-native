@@ -3,6 +3,8 @@ const vm = require('node:vm')
 
 const { compileFunction } = vm
 
+const patchedRequireSymbol = Symbol('PatchedRequireSymbol')
+
 util.inspectSymbols.push(
   Symbol.for('edge-runtime.inspect.custom')
 )
@@ -61,6 +63,10 @@ vm.runInContext = (source, context = {}) => {
   }
 
   context.__runtime_require = require
+  context.require = require
+  context.isServiceWorkerScope = true
+  context.isSocketRuntime = true
+  context.isWorkerScope = true
 
   const compiled = compileFunction(source, {
     async: false,
