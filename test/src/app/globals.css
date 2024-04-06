@@ -100,12 +100,16 @@ body {
   align-content: center;
   font-family: helvetica;
   overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
   app-region: drag;
   --app-region: drag;
 }
 
 h1 {
   font-weight: 100;
+  text-transform: uppercase;
 }
 
 h1 b {

@@ -4,8 +4,12 @@
   "description": "Run Next.js Applications on the Socket Runtime",
   "main": "src/index.js",
   "type": "module",
+  "bin": {
+    "next-native": "bin/index.js"
+  },
   "scripts": {
-    "test": "ssc build -r -o test/"
+    "test": "npm run lint && ssc build -r -o test/",
+    "lint": "standard"
   },
   "keywords": [
     "next",
@@ -16,7 +20,16 @@
     "web",
     "application"
   ],
-  "author": "Joseph Werle <joseph@socketsupply.co>",
+  "authors": [
+    {
+      "name": "Joseph Werle",
+      "email": "joseph@socketsupply.co"
+    },
+    {
+      "name": "Paolo Fragomeni",
+      "email": "paolo@socketsupply.co"
+    }
+  ],
   "license": "MIT",
   "peerDependencies": {
     "@socketsupply/socket": "*",
@@ -31,6 +44,7 @@
     }
   },
   "devDependencies": {
+    "standard": "^17.1.0",
     "@types/node": "^20.12.5"
   }
 }
