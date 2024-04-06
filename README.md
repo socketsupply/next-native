@@ -4,7 +4,7 @@ Next-Natve is a project that makes it possible to build native, cross-platform a
 Next.js framework.
 
 > [!WARNING]
-> This is pre-release software! It's only ready for early adopters and potential contributors.
+> This is pre-release software! It requires the `dev` branch of the [`socket-runtime`][0]. It's only ready for early adopters and potential contributors
 
 # USAGE
 
@@ -42,7 +42,7 @@ general options:
 
 ## AS CODE
 
-Use as a module inside to create a nextjs server inside a service worker. See [this example][0]
+Use as a module inside to create a nextjs server inside a service worker. See [this example][1]
 to get a quick demo up and running.
 
 ```js
@@ -56,4 +56,5 @@ server.start().then(() => {
 })
 ```
 
-[0]:test
+[0]:https://github.com/socketsupply/socket/tree/dev
+[1]:test
