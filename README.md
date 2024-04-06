@@ -18,11 +18,11 @@ $npm i @socketsupply/next-native -g
 
 ```
 $next-native -h
-next-natve v0.5.4 (97fa3f7c)
+next-native v0.5.4 (97fa3f7c)
 
 usage:
-  next-natve [SUBCOMMAND] [options] [<project-dir>]
-  next-natve [SUBCOMMAND] -h
+  next-native [SUBCOMMAND] [options] [<project-dir>]
+  next-native [SUBCOMMAND] -h
 
 subcommands:
   build                                build project

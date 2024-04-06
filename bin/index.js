@@ -12,7 +12,7 @@ function run (args) {
   const p = spawn(ssc, args)
 
   p.stdout.on('data', data => {
-    const str = data.toString().replace(/ssc/g, 'next-natve')
+    const str = data.toString().replace(/ssc/g, 'next-native')
     console.log(str)
   })
 
