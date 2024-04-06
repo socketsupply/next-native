@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "types": ["@socketsupply/socket", "@types/node", "next"],
+		"module": "es2022",
+    "paths": {
+      "npm:@socketsupply/next-native": ["../src/index.js"],
+      "npm:@socketsupply/next-native/*": ["../src/*"],
+			"npm:*": ["../node_modules/*"],
+      "@/*": ["./src/*"]
+    }
+  }
+}
