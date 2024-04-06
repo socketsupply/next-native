@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-import { spawn } from 'child_process'
-import { fileURLToPath } from 'url'
-import fs from 'fs'
-import path from 'path'
+import { fileURLToPath } from 'node:url'
+import { spawn } from 'node:child_process'
+import path from 'node:path'
+import fs from 'node:fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ssc = path.resolve(__dirname, '../node_modules/@socketsupply/socket/bin/ssc.js')
-const pkg = JSON.parse(await fs.promises.readFile(path.join(__dirname, '..', 'package.json')))
+const pkg = JSON.parse(await fs.promises.readFile(path.join(__dirname, '..', 'package.json'), 'utf8'))
 
 function run (args) {
   const p = spawn(ssc, args)
