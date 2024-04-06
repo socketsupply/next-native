@@ -1,0 +1,36 @@
+{
+  "name": "@socketsupply/next-native",
+  "version": "0.0.1",
+  "description": "Run Next.js Applications on the Socket Runtime",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "ssc build -r -o test/"
+  },
+  "keywords": [
+    "next",
+    "nextjs",
+    "native",
+    "socket",
+    "runtime",
+    "web",
+    "application"
+  ],
+  "author": "Joseph Werle <joseph@socketsupply.co>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@socketsupply/socket": "*",
+    "next": "^14.1.4"
+  },
+  "exports": {
+    ".": {
+      "default": "./src/index.js"
+    },
+    "./server": {
+      "default": "./src/server.js"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5"
+  }
+}

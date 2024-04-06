@@ -1,0 +1,35 @@
+{
+	"include": [
+		"src/*.js",
+		"src/**/*.js",
+    "test/*.js"
+	],
+	"exclude": [
+		"node_modules",
+		"types",
+		"build",
+		"src/modules/*.js",
+	],
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"target": "es2022",
+		"module": "es2022",
+		"lib": ["es2022", "dom"],
+		"types": ["@socketsupply/socket", "@types/node", "next"],
+		"removeComments": false,
+		"checkJs": true,
+		"allowJs": true,
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"strictNullChecks": false,
+		"declaration": true,
+		"declarationMap": true,
+		"baseUrl": ".",
+		"paths": {
+      "npm:@socketsupply/next-native": ["./src/index.js"],
+      "npm:@socketsupply/next-native/*": ["./src/*"],
+			"npm:*": ["node_modules/*"]
+		}
+	}
+}
