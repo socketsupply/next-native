@@ -23,11 +23,11 @@ npm link @socketsupply/socket
 Use as a command line tool to initialize an existing project as a native app.
 
 ```bash
-$npm i @socketsupply/next-native -g
+$ npm i @socketsupply/next-native -g
 ```
 
-```
-$next-native -h
+```bash
+$ next-native -h
 next-native v0.5.4 (97fa3f7c)
 
 usage:
