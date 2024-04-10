@@ -41,6 +41,9 @@
     },
     "./server": {
       "default": "./src/server.js"
+    },
+    "./components": {
+      "default": "./src/components.js"
     }
   },
   "devDependencies": {

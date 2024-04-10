@@ -6,7 +6,7 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="
-        connect-src socket: https: http: blob: ipc: npm: node: wss: ws: ws://localhost:*;
+        connect-src socket: https: http: blob: npm: node: ipc: wss: ws: ws://localhost:*;
          script-src socket: https: http: blob: npm: node: http://localhost:* 'unsafe-eval' 'unsafe-inline';
          worker-src socket: https: http: blob: 'unsafe-eval' 'unsafe-inline';
           frame-src socket: https: http: blob: http://localhost:*;
@@ -15,18 +15,26 @@
          object-src 'none';
       "
     >
-    <script type="module">
-      globalThis.addEventListener('DOMContentLoaded', () => {
-        location = '/app/hello'
-      })
-    </script>
+    <script type="module" src="npm:@socketsupply/next-native"></script>
     <style type="text/css" media="all">
       * {
         color: #fff;
       }
+
+      #loading-frame {
+        border: 0;
+        display: block;
+        position: absolute;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        width: 100%
+      }
     </style>
   </head>
   <body>
-    <h1>Loading....</h1>
+    <next-application href="/app">
+      <iframe id="loading-frame" src="loading.html" frameborder=0 />
+    </next-application>
   </body>
 </html>
