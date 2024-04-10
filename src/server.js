@@ -8,17 +8,18 @@ import { createRequire } from './commonjs/require.js'
 
 process.env.SOCKET_RUNTIME_HTTP_ADAPTER_SERVICE_WORKER_IGNORE_PORT_CHECK = true
 
+// this server isn't actually listening on a port, but
+// we use a port to play well with nextjs
+const NEXT_HTTP_SERVER_PORT = 3000
+
 /**
  * @typedef {{
- *   config?: import('./config.js).Config
+ *   config?: import('./config.js').Config
  * }} ServerOptions
  */
 
 /**
- * @typedef {
- *   import('./config.js').ConfigLoadOptions &
- *   { origin?: string | URL }
- * } ServerPrepareOptions
+ * @typedef {{ filename?: string, origin?: string | URL }} ServerPrepareOptions
  */
 
 /**
@@ -26,12 +27,10 @@ process.env.SOCKET_RUNTIME_HTTP_ADAPTER_SERVICE_WORKER_IGNORE_PORT_CHECK = true
  */
 
 /**
- * @typedef {
- *   function(
- *     import('socket:http').IncomingMessage,
- *     import('socket:http').ServerResponse
- *   ): Promise<Response?|undefined>
- * } ServerRequestHandler
+ * @typedef {function(
+ *   import('socket:http').IncomingMessage,
+ *   import('socket:http').ServerResponse
+ * ):void} ServerRequestHandler
  */
 
 /**
@@ -111,7 +110,7 @@ export default class Server {
     this.#instance = this.#require('next')({
       dir: options?.origin ?? location.origin,
       hostname: '0.0.0.0',
-      port: 3000,
+      port: NEXT_HTTP_SERVER_PORT,
       dev: false
     })
 
@@ -139,12 +138,14 @@ export default class Server {
    * @return {ServerRequestHandler}
    */
   getRequestHandler (options = null) {
+    // eslint-disable-next-line
+    void options
     const handle = this.#instance.getRequestHandler()
     return onRequest
     function onRequest (req, res) {
       req.headers.host = '0.0.0.0'
       req.headers['x-forwarded-proto'] = 'http'
-      req.headers['x-forwarded-host'] = 'localhost:3000'
+      req.headers['x-forwarded-host'] = `localhost:${NEXT_HTTP_SERVER_PORT}`
       req.headers['x-forwarded-for'] = '127.0.0.1'
       handle(req, res)
     }

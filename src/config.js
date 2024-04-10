@@ -46,7 +46,10 @@ export class Config {
   /**
    * @type {ConfigObject}
    */
-  #config = {}
+  #config = {
+    next: null,
+    require: null
+  }
 
   /**
    * Attempts to load configuration from the filesystem.
@@ -94,7 +97,7 @@ export class Config {
     if (!config.next) {
       if (typeof options?.require === 'function') {
         try {
-          config.next = require(url)
+          config.next = require(url.href)
         } catch (err) {
           console.debug(err)
           // TODO(@jwerle): debug()
@@ -125,12 +128,11 @@ export class Config {
    * @param {string=} [filename]
    */
   set (config, filename = null) {
-    this.#config = {}
-    this.#config.next ||= {}
+    this.#config = { next: null, require: null }
 
     Object.assign(this.#config, config)
 
-    const workerLocation = new URL(RUNTIME_WORKER_LOCATION)
+    const workerLocation = new URL(globalThis.RUNTIME_WORKER_LOCATION)
 
     if (this.#config.next && typeof this.#config.next === 'object') {
       Object.assign(this.#config.next, {

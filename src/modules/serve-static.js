@@ -11,10 +11,11 @@ module.exports = {
    * @param {object=} opts
    */
   async serveStatic (req, res, path, opts) {
+    // eslint-disable-next-line
+    void path, opts
     const { method, url } = req
     const headers = new Headers(Object.entries(req.getHeaders()))
-    let response = null
-    response = await fetch(url, { headers, method })
+    let response = await fetch(url, { headers, method })
 
     if (!response.ok) {
       response = await fetch(`/public/${url}`, { headers, method })

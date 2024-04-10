@@ -56,16 +56,25 @@ vm.runInContext = (source, context = {}) => {
     `
   }
 
+  // @ts-ignore
   if (context && !context.globalThis) {
+    // @ts-ignore
     context.globalThis = context
+    // @ts-ignore
     context.self = context
+    // @ts-ignore
     context.global = globalThis
   }
 
+  // @ts-ignore
   context.__runtime_require = require
+  // @ts-ignore
   context.require = require
+  // @ts-ignore
   context.isServiceWorkerScope = true
+  // @ts-ignore
   context.isSocketRuntime = true
+  // @ts-ignore
   context.isWorkerScope = true
 
   const compiled = compileFunction(source, {

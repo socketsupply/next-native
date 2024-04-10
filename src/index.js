@@ -1,4 +1,5 @@
 import Server from './server.js'
+import './components.js'
 
 /**
  * @typedef {{}} CreateServerOptions
