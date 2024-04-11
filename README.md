@@ -55,6 +55,10 @@ general options:
 Use as a module inside to create a nextjs server inside a service worker. See [this example][1]
 to get a quick demo up and running.
 
+```bash
+$ npm i @socketsupply/next-native -S
+```
+
 ```js
 import createServer from 'npm:@socketsupply/next-native'
 

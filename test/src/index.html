@@ -16,19 +16,47 @@
       "
     >
     <script type="module" src="npm:@socketsupply/next-native"></script>
-    <style type="text/css" media="all">
-      * {
-        color: #fff;
+    <style>
+      :root {
+        --fg: black;
+        --bg: white;
       }
 
-      #loading-frame {
-        border: 0;
-        display: block;
-        position: absolute;
-        height: 100%;
-        left: 0px;
-        top: 0px;
-        width: 100%
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: white;
+          --bg: black;
+        }
+      }
+
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      body {
+        color: var(--color);
+        background: var(--bg);
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-content: center;
+        font-family: helvetica;
+        overflow: hidden;
+        cursor: default;
+
+        app-region: drag;
+        --app-region: drag;
+
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      h1 {
+        font-weight: 100;
+        text-transform: uppercase;
       }
     </style>
   </head>
