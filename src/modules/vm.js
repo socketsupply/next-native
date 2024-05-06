@@ -80,6 +80,7 @@ vm.runInContext = (source, context = {}) => {
   const compiled = compileFunction(source, {
     async: false,
     context,
+    type: 'classic',
     scope: ['globalThis']
   })
 
@@ -90,6 +91,7 @@ vm.runInThisContext = (source) => {
   const compiled = compileFunction(source, {
     async: false,
     context: globalThis,
+    type: 'classic',
     scope: ['globalThis']
   })
 

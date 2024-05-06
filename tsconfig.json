@@ -8,7 +8,7 @@
 		"node_modules",
 		"types",
 		"build",
-		"src/modules/*.js",
+		"src/modules/*.js"
 	],
 	"compilerOptions": {
 		"moduleResolution": "node",

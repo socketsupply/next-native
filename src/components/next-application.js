@@ -195,6 +195,8 @@ export class NextApplicationState extends EventTarget {
  *     <div>A loading splash view can go here...</div>
  *   </next-application>
  * ```
+ * @class NextApplication
+ * @extends HTMLElement
  */
 export class NextApplication extends (globalThis.HTMLElement ?? Object) {
   /**

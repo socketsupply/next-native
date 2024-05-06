@@ -1,3 +1,5 @@
+import fs from 'socket:fs/promises'
+
 export const runtime = 'edge'
 // `app/hello/page.js` is the UI for the `/app/hello` URL
 export default function Page () {
